@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Item from '../Item.vue';
 import { test, describe, expect } from '@jest/globals';
-import { mount } from '@vue/test-utils';
+import { mount, shallowMount } from '@vue/test-utils';
 
 // jest cannot parse a component by default, it is not plain javascript yet
 
@@ -21,7 +21,7 @@ describe('Item.vue', () => {
     console.log(vm.$el.textContent);
 
     // access the HTML content
-    // toContain looks for substring so it can include 
+    // toContain looks for substring so it can include
     // some of the string but not all of it
     expect(vm.$el.textContent).toContain('item');
     // toBe is strict equal
@@ -32,8 +32,13 @@ describe('Item.vue', () => {
     const wrapper = mount(Item);
 
     expect(wrapper.vm.$el.textContent).toContain('item');
-
-    //same as above
+    // same as above
     expect(wrapper.text()).toContain('item');
-  })
+  });
+  
+  test('renders "item" with shallowMount', () => {
+    //using shallow mount for remainder of the book
+    const shallowWrapper = shallowMount(Item);
+    expect(shallowWrapper.text()).toContain('item');
+  });
 });
