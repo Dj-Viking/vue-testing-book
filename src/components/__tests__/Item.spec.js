@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Item from '../Item.vue';
 import { test, describe, expect } from '@jest/globals';
+import { mount } from '@vue/test-utils';
 
 // jest cannot parse a component by default, it is not plain javascript yet
 
@@ -9,7 +10,7 @@ describe('Item.vue', () => {
     expect(true).toBe(true);
   });
 
-  test('renders "item"', () => {
+  test('renders "item" using Vue Constructor', () => {
     // to mount a single file component
     // need to convert copmonent options into a vue constructor
     // creating a Vue constructor with the Vue.extend() method
@@ -27,5 +28,12 @@ describe('Item.vue', () => {
     expect(vm.$el.textContent).toBe('\n  item\n');
   });
 
-  
+  test('renders "item" with wrapper', () => {
+    const wrapper = mount(Item);
+
+    expect(wrapper.vm.$el.textContent).toContain('item');
+
+    //same as above
+    expect(wrapper.text()).toContain('item');
+  })
 });
