@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Item from '../Item.vue';
+import TestComponent from '../TestComponent.vue';
 import { test, describe, expect } from '@jest/globals';
 import { mount, shallowMount } from '@vue/test-utils';
 
@@ -38,7 +39,17 @@ describe('Item.vue', () => {
   
   test('renders "item" with shallowMount', () => {
     //using shallow mount for remainder of the book
+    // shallow mount allows to test the rendered output of a component
+    // but not the rendered output of a child component
     const shallowWrapper = shallowMount(Item);
+    debugger;
     expect(shallowWrapper.text()).toContain('item');
+  });
+});
+
+describe('TestComponent.vue', () => {
+  test('renders "Hello World!', () => {
+    const wrapper = shallowMount(TestComponent);
+    expect(wrapper.text()).toContain("Hello World!");
   });
 });
