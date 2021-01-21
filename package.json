@@ -37,9 +37,6 @@
     "rules": {
       "prefer-promise-reject-errors": 0,
       "no-new": 0
-    },
-    "parserOptions": {
-      "parser": "babel-eslint"
     }
   },
   "postcss": {

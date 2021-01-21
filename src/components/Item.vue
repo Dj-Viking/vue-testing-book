@@ -2,4 +2,4 @@
   <div>
     item
   </div>
-</template>
+</template>;
