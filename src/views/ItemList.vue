@@ -1,9 +1,9 @@
 <template>
-  <item />
+  <Item />
 </template>
 
 <script>
-import Item from '../components/Item.vue'
+import Item from '../components/Item.vue';
 // import api from '../api/api';
 
 // Warning: @vue/test-utils should use version 1.0.0-beta.20. To install, use:
