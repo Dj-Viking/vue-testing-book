@@ -20,7 +20,6 @@
           </button>
         </a>
 
-
       <span class="small-span">
         Last Updated: {{unparsedDateTime | moment('MM/DD/YYYY hh:mm:ss a')}}
       </span>
