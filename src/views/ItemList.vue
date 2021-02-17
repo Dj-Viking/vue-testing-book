@@ -1,5 +1,16 @@
 <template>
-  <Item />
+  <div>
+    <ul 
+      v-for="(item, i) in items"
+      :key="i"
+    >
+      <span>Item # {{i + 1}}</span>
+      <li>
+        <Item :item="item" />
+      </li>
+      
+    </ul>
+  </div>
 </template>
 
 <script>
@@ -13,6 +24,18 @@ import Item from '../components/Item.vue';
 export default {
   components: {
     Item
+  },
+  props: {
+    items: Array
   }
 }
 </script>
+
+<style scoped>
+  ul {
+    list-style: none;
+  }
+  span {
+    font-weight: bold;
+  }
+</style>
