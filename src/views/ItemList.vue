@@ -4,6 +4,7 @@
       v-for="(item, i) in items"
       :key="i"
     >
+    
       <span>Item # {{i + 1}}</span>
       <li>
         <Item :item="item" />
