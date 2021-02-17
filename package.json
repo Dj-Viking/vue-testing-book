@@ -7,13 +7,15 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "test": "npm run test:unit",
-    "test:unit": "jest --no-cache",
+    "test:unit": "jest --no-cache --verbose",
     "test:unit:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --no-cache --runInBand",
     "test:watch": "jest --watch"
   },
   "dependencies": {
     "firebase": "^8.2.3",
-    "vue": "^2.5.16"
+    "moment": "^2.29.1",
+    "vue": "^2.5.16",
+    "vue-moment": "^4.1.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.5.10",

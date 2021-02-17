@@ -4,6 +4,8 @@ import { fetchListData } from './api/api';
 
 Vue.config.productionTip = false;
 
+Vue.use(require('vue-moment'));
+
 function getTopItems () {
   return fetchListData('top').then(items => items);
 };
