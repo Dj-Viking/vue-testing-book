@@ -14,11 +14,11 @@
         Title: {{item.title}}
       </span>
 
-        <a :href="item.url">
-          <button class="post-button">
-              Link To Post
-          </button>
-        </a>
+      <a :href="item.url">
+        <button class="post-button">
+            Link To Post
+        </button>
+      </a>
 
       <span class="small-span">
         Last Updated: {{unparsedDateTime | moment('MM/DD/YYYY hh:mm:ss a')}}
